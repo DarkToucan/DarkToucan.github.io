@@ -64,7 +64,7 @@
 
 
 <!--<form action="" onsubmit="myFunction()" style="border:1px solid #ccc;width:30%">-->
-    <div class="container" style="border:1px solid #ccc;width:30%">
+    <div id="content" class="container" style="border:1px solid #ccc;width:30%">
         <h1>Pre Sign Up</h1>
         <p>Please fill in this form to pre sign up for the LINC project.</p>
         <hr>
@@ -84,6 +84,24 @@
 <!--</form>-->
 
 <script>
+    function returnToSignup() {
+        document.getElementById("content").innerHTML = "      <h1>Pre Sign Up</h1>\n" +
+            "        <p>Please fill in this form to pre sign up for the LINC project.</p>\n" +
+            "        <hr>\n" +
+            "\n" +
+            "        <label for=\"name\"><b>Name</b></label>\n" +
+            "        <input id=\"name\" type=\"text\" placeholder=\"Name\" name=\"name\" required>\n" +
+            "\n" +
+            "        <label for=\"email\"><b>Email</b></label>\n" +
+            "        <input id=\"email\" type=\"text\" placeholder=\"Enter Email\" name=\"email\" required>\n" +
+            "\n" +
+            "        <p>By signing up, you agree to our  <a href=\"#\" style=\"color:dodgerblue\">Terms & Privacy</a>.</p>\n" +
+            "\n" +
+            "        <div class=\"clearfix\">\n" +
+            "            <button type=\"submit\" class=\"signupbtn\" onclick=\"myFunction()\">Sign Up</button>\n" +
+            "        </div>\n";
+
+    }
     function myFunction() {
         var name = document.getElementById('name').value;
         var email = document.getElementById('email').value;
@@ -99,7 +117,7 @@
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4 && xhr.status === 200) {
                 console.log(xhr.responseText);
-                alert("The form was submitted");
+                document.getElementById("content").innerHTML = "<center><h1>"+name+", welcome to LINC!</h1><a onclick='returnToSignup()' style=\"color:dodgerblue\">New Sign up</a></center>";
             }
         };
         var data = JSON.stringify({"name": name, "email": email});
