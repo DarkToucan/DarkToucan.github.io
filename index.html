@@ -64,31 +64,52 @@
 
 
 <!--<form action="" onsubmit="myFunction()" style="border:1px solid #ccc;width:30%">-->
-    <div id="content" class="container" style="border:1px solid #ccc;width:30%">
-        <h1>Sign Up</h1>
-        <p>Please fill in this form to sign up for the LINC project.</p>
-        <hr>
+<div id="content" class="container" style="border:1px solid #ccc;width:30%">
+    <h1>Sign Up</h1>
+    <p>Please fill in this form to sign up for the LINC project.</p>
+    <p id="hiddentext" style="visibility: hidden;color: red">Test</p>
 
-        <label for="name"><b>Name</b></label>
-        <input id="name" type="text" placeholder="Name" name="name" required>
+    <hr>
 
-        <label for="email"><b>Email</b></label>
-        <input id="email" type="text" placeholder="Enter Email" name="email" required>
+    <label for="name"><b>Name</b></label>
+    <input id="name" type="text" placeholder="Enter name" name="name" required>
 
-        <p>By signing up, you agree to our  <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+    <label for="email"><b>Email</b></label>
+    <input id="email" type="text" placeholder="Enter email" name="email" required>
 
-        <div class="clearfix">
-            <button type="submit" class="signupbtn" onclick="myFunction()">Sign Up</button>
-        </div>
+    <label for="remail"><b>Repeat email</b></label>
+    <input id="remail" type="text" placeholder="Repeat email" name="remail" required>
+
+    <label for="phone"><b>Phone number</b></label>
+    <input id="phone" type="text" placeholder="Enter phone number" name="phone" required>
+
+    <p>By signing up, you agree to our  <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+    <div class="clearfix">
+        <button type="submit" class="signupbtn" onclick="myFunction()">Sign Up</button>
     </div>
+</div>
 <!--</form>-->
 
 <script>
     function myFunction() {
         var name = document.getElementById('name').value;
         var email = document.getElementById('email').value;
+        var remail = document.getElementById('remail').value;
+        var phone = document.getElementById('phone').value;
         // Sending and receiving data in JSON format using POST method
 
+        if(email != remail){
+            var hiddentext = document.getElementById('hiddentext');
+            hiddentext.style.visibility = "visible";
+            hiddentext.innerHTML = "<center>Please provide matching emails</center>";
+            return;
+        }if(email == "" || name == "" || phone == ""){
+            var hiddentext = document.getElementById('hiddentext');
+            hiddentext.style.visibility = "visible";
+            hiddentext.innerHTML = "<center>Please fill in the missing text fields</center>";
+            return;
+        }
         var xhr = new XMLHttpRequest();
         var url = "https://python-service-linc-dtu.eu-de.mybluemix.net/preregister";
         xhr.open("POST", url, true);
@@ -102,27 +123,33 @@
                 document.getElementById("content").innerHTML = "<center><h1>"+name+", welcome to LINC!</h1><a onclick='returnToSignup()' style=\"color:dodgerblue\">New Sign up</a></center>";
             }
         };
-        var data = JSON.stringify({"name": name, "email": email});
+        var data = JSON.stringify({"name": name, "email": email, "phone": phone});
         xhr.send(data);
     }
     function returnToSignup() {
-        document.getElementById("content").innerHTML = "      <h1>Sign Up</h1>\n" +
-            "        <p>Please fill in this form to sign up for the LINC project.</p>\n" +
-            "        <hr>\n" +
+        document.getElementById("content").innerHTML = "    <h1>Sign Up</h1>\n" +
+            "    <p>Please fill in this form to sign up for the LINC project.</p>\n" +
+            "    <p id=\"hiddentext\" style=\"visibility: hidden;color: red\">Test</p>\n" +
             "\n" +
-            "        <label for=\"name\"><b>Name</b></label>\n" +
-            "        <input id=\"name\" type=\"text\" placeholder=\"Name\" name=\"name\" required>\n" +
+            "    <hr>\n" +
             "\n" +
-            "        <label for=\"email\"><b>Email</b></label>\n" +
-            "        <input id=\"email\" type=\"text\" placeholder=\"Enter Email\" name=\"email\" required>\n" +
+            "    <label for=\"name\"><b>Name</b></label>\n" +
+            "    <input id=\"name\" type=\"text\" placeholder=\"Enter name\" name=\"name\" required>\n" +
             "\n" +
-            "        <p>By signing up, you agree to our  <a href=\"#\" style=\"color:dodgerblue\">Terms & Privacy</a>.</p>\n" +
+            "    <label for=\"email\"><b>Email</b></label>\n" +
+            "    <input id=\"email\" type=\"text\" placeholder=\"Enter email\" name=\"email\" required>\n" +
             "\n" +
-            "        <div class=\"clearfix\">\n" +
-            "            <button type=\"submit\" class=\"signupbtn\" onclick=\"myFunction()\">Sign Up</button>\n" +
-            "        </div>\n";
+            "    <label for=\"remail\"><b>Repeat email</b></label>\n" +
+            "    <input id=\"remail\" type=\"text\" placeholder=\"Repeat email\" name=\"remail\" required>\n" +
+            "\n" +
+            "    <label for=\"phone\"><b>Phone number</b></label>\n" +
+            "    <input id=\"phone\" type=\"text\" placeholder=\"Enter phone number\" name=\"phone\" required>\n" +
+            "\n" +
+            "    <p>By signing up, you agree to our  <a href=\"#\" style=\"color:dodgerblue\">Terms & Privacy</a>.</p>\n" +
+            "\n" +
+            "    <div class=\"clearfix\">\n" +
+            "        <button type=\"submit\" class=\"signupbtn\" onclick=\"myFunction()\">Sign Up</button>\n" +
+            "    </div>";
 
     }
 </script>
-
-</body>
