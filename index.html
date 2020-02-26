@@ -120,7 +120,7 @@
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4 && xhr.status === 200) {
                 console.log(xhr.responseText);
-                document.getElementById("content").innerHTML = "<center><h1>"+name+", welcome to LINC!</h1><a onclick='returnToSignup()' style=\"color:dodgerblue\">New Sign up</a></center>";
+                document.getElementById("content").innerHTML = "<center><h1>"+name+", welcome to LINC!</h1><a href="#" onclick='returnToSignup()' style=\"color:dodgerblue\">New Sign up</a></center>";
             }
         };
         var data = JSON.stringify({"name": name, "email": email, "phone": phone});
