@@ -64,29 +64,29 @@
 
 
 <!--<form action="" onsubmit="myFunction()" style="border:1px solid #ccc;width:30%">-->
-<div id="content" class="container" style="border:1px solid #ccc;width:30%">
+<div id="content" class="container" style="border:1px solid #ccc;width:20%">
     <h1>Sign Up</h1>
-    <p>Please fill in this form to sign up for the LINC project.</p>
+    <p>Please fill in this form to sign up as a test passenger in LINC self-driving shuttles</p>
     <p id="hiddentext" style="visibility: hidden;color: red">Test</p>
 
     <hr>
 
-    <label for="name"><b>Name</b></label>
-    <input id="name" type="text" placeholder="Enter name" name="name" required>
+    <label for="name"><b>Full name</b></label>
+    <input id="name" type="text" placeholder="Enter your full name" name="name" required>
 
     <label for="email"><b>Email</b></label>
-    <input id="email" type="text" placeholder="Enter email" name="email" required>
+    <input id="email" type="text" placeholder="Enter your email" name="email" required>
 
     <label for="remail"><b>Repeat email</b></label>
-    <input id="remail" type="text" placeholder="Repeat email" name="remail" required>
+    <input id="remail" type="text" placeholder="Repeat your email" name="remail" required>
 
     <label for="phone"><b>Phone number</b></label>
-    <input id="phone" type="text" placeholder="Enter phone number" name="phone" required>
+    <input id="phone" type="text" placeholder="Enter your phone number" name="phone" required>
 
-    <p>By signing up, you agree to our  <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+    <p>Please read our <a href="https://lincproject.dk/wp-content/uploads/2020/09/Oplysningsbrev_LINC_07092020_eng_final.pdf" style="color:dodgerblue">Privacy Notice</a> (GDPR) before you sign up.</p>
 
     <div class="clearfix">
-        <button type="submit" class="signupbtn" onclick="myFunction()">Sign Up</button>
+        <button type="submit" class="signupbtn" onclick="myFunction()">Sign up</button>
     </div>
 </div>
 <!--</form>-->
@@ -120,36 +120,14 @@
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4 && xhr.status === 200) {
                 console.log(xhr.responseText);
-                document.getElementById("content").innerHTML = "<center><h1>"+name+", welcome to LINC!</h1><a href="#" onclick='returnToSignup()' style=\"color:dodgerblue\">New Sign up</a></center>";
+                document.getElementById("content").innerHTML = "<center><h1>"+name+", welcome to LINC!</h1><a href='#' onclick='returnToSignup()' style=\"color:dodgerblue\">New Sign up</a></center>";
             }
         };
-        var data = JSON.stringify({"name": name, "email": email, "phone": phone});
+        var data = JSON.stringify({"name": btoa(name), "email": btoa(email), "phone": phone,"lan": "eng"});
         xhr.send(data);
     }
     function returnToSignup() {
-        document.getElementById("content").innerHTML = "    <h1>Sign Up</h1>\n" +
-            "    <p>Please fill in this form to sign up for the LINC project.</p>\n" +
-            "    <p id=\"hiddentext\" style=\"visibility: hidden;color: red\">Test</p>\n" +
-            "\n" +
-            "    <hr>\n" +
-            "\n" +
-            "    <label for=\"name\"><b>Name</b></label>\n" +
-            "    <input id=\"name\" type=\"text\" placeholder=\"Enter name\" name=\"name\" required>\n" +
-            "\n" +
-            "    <label for=\"email\"><b>Email</b></label>\n" +
-            "    <input id=\"email\" type=\"text\" placeholder=\"Enter email\" name=\"email\" required>\n" +
-            "\n" +
-            "    <label for=\"remail\"><b>Repeat email</b></label>\n" +
-            "    <input id=\"remail\" type=\"text\" placeholder=\"Repeat email\" name=\"remail\" required>\n" +
-            "\n" +
-            "    <label for=\"phone\"><b>Phone number</b></label>\n" +
-            "    <input id=\"phone\" type=\"text\" placeholder=\"Enter phone number\" name=\"phone\" required>\n" +
-            "\n" +
-            "    <p>By signing up, you agree to our  <a href=\"#\" style=\"color:dodgerblue\">Terms & Privacy</a>.</p>\n" +
-            "\n" +
-            "    <div class=\"clearfix\">\n" +
-            "        <button type=\"submit\" class=\"signupbtn\" onclick=\"myFunction()\">Sign Up</button>\n" +
-            "    </div>";
-
+        window.location.reload(false);
     }
 </script>
+
