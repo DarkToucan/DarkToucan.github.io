@@ -41,9 +41,10 @@
     }
 
 
-    /* Add padding to container elements */
+    /* Size of sign-up can be set here */
     .container {
         padding: 16px;
+        width:25%;
     }
 
     /* Clear floats */
@@ -58,13 +59,16 @@
         .signupbtn {
             width: 100%;
         }
+        .container {
+            width: 100%;
+        }
     }
 </style>
 <body>
 
 
 <!--<form action="" onsubmit="myFunction()" style="border:1px solid #ccc;width:30%">-->
-<div id="content" class="container" style="border:1px solid #ccc;width:20%">
+<div id="content" class="container" style="border:1px solid #ccc">
     <h1>Sign Up</h1>
     <p>Please fill in this form to sign up as a test passenger in LINC self-driving shuttles</p>
     <p id="hiddentext" style="visibility: hidden;color: red">Test</p>
@@ -113,14 +117,21 @@
         var xhr = new XMLHttpRequest();
         var url = "https://python-service-linc-dtu.eu-de.mybluemix.net/preregister";
         xhr.open("POST", url, true);
-        //xhr.withCredentials = true;
         xhr.setRequestHeader("Content-Type", "application/json");
-        //xhr.setRequestHeader("Access-Control-Allow-Headers", "X-Requested-With");
-        //xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4 && xhr.status === 200) {
                 console.log(xhr.responseText);
                 document.getElementById("content").innerHTML = "<center><h1>"+name+", welcome to LINC!</h1><a href='#' onclick='returnToSignup()' style=\"color:dodgerblue\">New Sign up</a></center>";
+            }else{
+                if(xhr.responseText.localeCompare("Already signed up")){
+                    var hiddentext = document.getElementById('hiddentext');
+                    hiddentext.style.visibility = "visible";
+                    hiddentext.innerHTML = "<center>"+xhr.responseText+"</center>";
+                }else{
+                    var hiddentext = document.getElementById('hiddentext');
+                    hiddentext.style.visibility = "visible";
+                    hiddentext.innerHTML = "<center>Server error (try again later).</center>";
+                }
             }
         };
         var data = JSON.stringify({"name": btoa(name), "email": btoa(email), "phone": phone,"lan": "eng"});
@@ -130,4 +141,3 @@
         window.location.reload(false);
     }
 </script>
-
