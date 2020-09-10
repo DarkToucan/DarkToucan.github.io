@@ -117,9 +117,15 @@
         var xhr = new XMLHttpRequest();
         var url = "https://python-service-linc-dtu.eu-de.mybluemix.net/preregister";
         xhr.open("POST", url, true);
+        //xhr.withCredentials = true;
         xhr.setRequestHeader("Content-Type", "application/json");
+        //xhr.setRequestHeader("Access-Control-Allow-Headers", "X-Requested-With");
+        xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4 && xhr.status === 200) {
+                console.log(xhr.responseText);
+                document.getElementById("content").innerHTML = "<center><h1>"+name+", welcome to LINC!</h1><a href='#' onclick='returnToSignup()' style=\"color:dodgerblue\">New Sign up</a></center>";
+            }else if(xhr.status === 201){
                 console.log(xhr.responseText);
                 document.getElementById("content").innerHTML = "<center><h1>"+name+", welcome to LINC!</h1><a href='#' onclick='returnToSignup()' style=\"color:dodgerblue\">New Sign up</a></center>";
             }else{
