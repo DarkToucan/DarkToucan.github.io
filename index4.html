@@ -48,15 +48,17 @@
         <h2 class="w3-wide">Delay Discounting</h2>
         <p class="w3-opacity"><i>Take a delay discounting test now!</i></p>
         <p class="w3-justify">In the following questions, you will be asked to access whether you would prefer an amount of money now or a different relative amount after a time period. Please take time to consider each choice and answer truthfully.</br>After each click of a button the values change, and after 5 clicks the time period updates.</p>
-        <div class="w3-row w3-padding-32">
-                <p class="w3-opacity"><i>Would you rather want:</i></p>
+            <div class="w3-row w3-padding-32">
+            <div class="w3-half">
+                
+                <p class="w3-opacity"><i>Ville du helst havde:</i></p>
 
                 <div class="w3-half">
-                <p>Now:</p>
+                <p>Nu:</p>
                 <button id="nowbutton" class="w3-button w3-black w3-section w3-center" type="button" onclick="nowButton()">1000kr</button>
             </div>
             <div class="w3-half">
-                <p id="timePeriodText">Or 3 months:</p>
+                <p id="timePeriodText">Eller Om 3 M&aring;neder:</p>
                 <button id="laterbutton" class="w3-button w3-black w3-section w3-center" type="button" onclick="laterButton()">1000kr</button>
             </div>
         </div>
@@ -79,8 +81,8 @@
     var index = -1;
     var idx = [0,1,2,3,4,5,6];
 
-    var time = ["1 Day","1 Week","1 Month","3 Months","1 Year", "5 Years", "25 Years"];
-    var timeInDays = [1,7,30,90,365,1825,9125];
+    var time = ["Eller Om 1 Dag:","Eller Om 1 Uge:","Eller Om 1 M&aring;ned:","Eller Om 3 M&aring;neder:","Eller Om 1 &aring;r:", "Eller Om 5 &aring;r:", "Eller Om 10 &aring;r:"];
+    var timeInDays = [1,7,30,90,365,1825,3650];
     var discounts = [];
 
     //get current dd index:
@@ -163,14 +165,14 @@
 
         var averageK = 0;
         for (i = 0; i < discounts.length; i++) {
-            var k = calculateK(100,timeInDays[i],discounts[i]);
+            var k = calculateK(1000,timeInDays[i],discounts[i]);
             kvals[i] = k;
             averageK = averageK + k;
         }
         averageK = averageK / discounts.length;
         console.log(averageK);
 
-        //discounts.forEach(element => kvals[i] = calculateK(100,element,);i++;)
+            //discounts.forEach(element => kvals[i] = calculateK(100,element,);i++;)
         var result = "";
         if(averageK > 0.1){
             result = "You have a very high tendency to discount future rewards, indicating very high impulsiveness.";
