@@ -174,31 +174,30 @@
 
             //discounts.forEach(element => kvals[i] = calculateK(100,element,);i++;)
         var result = "";
-        /*if(averageK > 0.1){
+        if(averageK > 0.1){
             result = "You have a very high tendency to discount future rewards, indicating very high impulsiveness.";
-        }else*/ if(averageK >= 0.016){
-            result = "Du har en høj tendens til at tilsidesætte fremtidige belønninger, hvilket indikere en højere end gennemsnitlig impulsivitet."//"You have a high tendency to discount future rewards, indicating high impulsiveness.";
+        }else if(averageK >= 0.016){
+            result = "You have a high tendency to discount future rewards, indicating high impulsiveness.";
 
         }else if(averageK >= 0.0060){
-            result = "Du har en gennemsnitlig tendens til at tilsidesætte fremtidige belønninger, hvilket indikere en gennemsnitlig impulsivitet.";
+            result = "You have an average tendency to discount future rewards, indicating an average impulsiveness.";
 
         }else if(averageK >= 0.0010){
-            result = "Du har en lav tendens til at tilsides&aelig;tte fremtidige bel&oslash;nninger, hvilket indikere en lavere end gennemsnitlig impulsivitet.";
+            result = "You have a low tendency to discount future rewards, indicating low impulsiveness.";
 
-        }/*else if(averageK >= 0.0001){ //pretty much unobtainable
+        }else if(averageK >= 0.0001){ //pretty much unobtainable
             result = "You have a very low tendency to discount future rewards, indicating low impulsiveness.";
-        }*/
+
+        }
 
 
-        var htmlstring = "<center><div style=\"max-width:400px\"><h2 class=\"w3-wide\">Delay Discounting resultater</h2>\n" +
-            "</br><p class=\"w3-opacity\">Resultaterne går fra meget høj, til høj, gennemsnitlig, lav og meget lav.</p></br></br>" +
+        var htmlstring = "<center><div style=\"max-width:400px\"><h2 class=\"w3-wide\">Delay Discounting results</h2>\n" +
             "<p class=\"w3-opacity\"><i>" + result + "</i></p>";
-        /*htmlstring = htmlstring + "<hr class=\"solid\">\n<p>Your average k = " + averageK +"</p><table><tr><th>Day</th><th>V</th></tr>";
+        htmlstring = htmlstring + "<hr class=\"solid\">\n<p>Your average k = " + averageK +"</p><table><tr><th>Day</th><th>V</th></tr>";
         for(i = 0; i<discounts.length;i++){
             htmlstring = htmlstring + "<tr><th>"+timeInDays[i]+"</th><th>"+discounts[i]+"</th></tr>"
         }
-        htmlstring = htmlstring + "</table></div><button class=\"w3-button w3-black w3-section w3-center\" onclick='refreshPage()'>Restart</button></center>";*/
-        htmlstring = htmlstring + "</div><button class=\"w3-button w3-black w3-section w3-center\" onclick='refreshPage()'>Restart</button></center>";
+        htmlstring = htmlstring + "</table></div><button class=\"w3-button w3-black w3-section w3-center\" onclick='refreshPage()'>Restart</button></center>";
         document.getElementById("testContent").innerHTML = htmlstring;
     }
 
