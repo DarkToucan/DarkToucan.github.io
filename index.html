@@ -53,11 +53,11 @@
 
                 <div class="w3-half">
                 <p>Now:</p>
-                <button id="nowbutton" class="w3-button w3-black w3-section w3-center" type="button" onclick="nowButton()">1000kr</button>
+                <button id="nowbutton" class="w3-button w3-black w3-section w3-center" type="button" onclick="nowButton()">1000$</button>
             </div>
             <div class="w3-half">
                 <p id="timePeriodText">Or 3 months:</p>
-                <button id="laterbutton" class="w3-button w3-black w3-section w3-center" type="button" onclick="laterButton()">1000kr</button>
+                <button id="laterbutton" class="w3-button w3-black w3-section w3-center" type="button" onclick="laterButton()">1000$</button>
             </div>
         </div>
     </div>
@@ -154,7 +154,7 @@
     function updateText() {
         document.getElementById("timePeriodText").innerHTML = time[index];
         //document.getElementById("nowbutton").innerText = "100$";
-        document.getElementById("nowbutton").innerHTML = currentValue.toString()+"Kr";
+        document.getElementById("nowbutton").innerHTML = currentValue.toString()+"$";
 
     }
     function finishTest() {
@@ -172,21 +172,21 @@
 
         //discounts.forEach(element => kvals[i] = calculateK(100,element,);i++;)
         var result = "";
-        if(averageK > 0.1){
+        /*if(averageK > 0.1){
             result = "You have a very high tendency to discount future rewards, indicating very high impulsiveness.";
-        }else if(averageK >= 0.016){
-            result = "You have a high tendency to discount future rewards, indicating high impulsiveness.";
+        }else*/ if(averageK >= 0.016){
+            result = "Your answers tell us that you give a lot more value to short term rewards, rather than rewards than are in the longer term future. <br><br>This makes it a lot harder for you to keep motivated for long term goals, such as losing weight, saving money.<br><br>This app will make it easier for you to keep you motivated, for these long term goals.";
 
         }else if(averageK >= 0.0060){
-            result = "You have an average tendency to discount future rewards, indicating an average impulsiveness.";
+            result = "Your answers tell us that you give more value to short term rewards, rather than rewards than are in the longer term future.<br><br>This makes it harder for you to keep motivated for long term goals, such as losing weight, saving money.<br><brThis app will make it easier for you to keep you motivated, for these long term goals.";
 
         }else if(averageK >= 0.0010){
-            result = "You have a low tendency to discount future rewards, indicating low impulsiveness.";
+            result = "Your answers tell us that you give a bit more value to short term rewards, rather than rewards than are in the longer term future.<br><br>This makes it a bit hard for you to keep motivated for long term goals, such as losing weight, saving money.<br><br>This app will make it easier for you to keep you motivated, for these long term goals.";
 
-        }else if(averageK >= 0.0001){ //pretty much unobtainable
+        }/*else if(averageK >= 0.0001){ //pretty much unobtainable
             result = "You have a very low tendency to discount future rewards, indicating low impulsiveness.";
 
-        }
+        }*/
 
 
         var htmlstring = "<center><div style=\"max-width:400px\"><h2 class=\"w3-wide\">Delay Discounting results</h2>\n" +
