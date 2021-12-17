@@ -1,215 +1,170 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <title>W3.CSS Template</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-    body {font-family: "Lato", sans-serif}
-    .mySlides {display: none}
-
-    table {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
+    .third {
+        width: 33%;
     }
 
-    td, th {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-    }
-
-    tr:nth-child(even) {
-        background-color: #dddddd;
-    }
-
-    /* Solid border */
-    hr.solid {
-        border-top: 3px solid #bbb;
+    .column {
+        float: left;
+        width: 33.33%;
+        padding: 10px;
+        height: 300px; /* Should be removed. Only for demonstration */
     }
 </style>
 <body>
 
-<!-- Navbar -->
+<!-- Navbar (sit on top) -->
 <div class="w3-top">
-    <div class="w3-bar w3-black w3-card">
-        <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-        <a href="https://www.dtu.dk/service/telefonbog/person?id=88764" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
+    <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+        <a href="#home" class="w3-bar-item w3-button"><b>P2</b> DTU DEMO</a>
+        <!-- Float links to the right. Hide them on small screens -->
+        <div class="w3-right w3-hide-small">
+            <a href="index.html" class="w3-bar-item w3-button">Home</a>
+            <a href="side1.html" class="w3-bar-item w3-button">Ny med diabetes</a>
+            <a href="side2.html" class="w3-bar-item w3-button">Inspiration</a>
+            <a href="side3.html" class="w3-bar-item w3-button">Mere viden</a>
+        </div>
     </div>
 </div>
+
+<!-- Header -->
+<div class="w3-content w3-padding" style="max-width:1200px;height:900px" id="home">
+    <div style="height: 40px;">&nbsp;</div>
+    <center><h1 class="w3-border-bottom w3-border-light-grey w3-padding-16">Hvordan oplever du din situation?</h1></center>
+    <div>
+        <p> Type 2 diabetes har manage variationer, situationer og personlige problem stillinger, vi har derfor valgt at opdele siden for at sørge for indholdet er mest relevant for dig med diabetes. Opdelingen er basert på medlemmernes erfarringer og opdateres løbende med ny viden. Nedenunder kan du læse om opdelingen og hvad hver kategori indeholder.</p>
+    </div>
+
+    <div class="column">
+        <div w3-col l3 m6 w3-margin-bottom>
+            <center><h3>Ny med diabetes</h3></center>
+        </div>
+        <a href="side1.html"><img class="w3-image" src="/res/tulip1.jpg" alt="Architecture" width="100%"></a>
+        <center><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p></center>
+    </div>
+    <div class="column">
+        <div>
+            <center><h3> Brug for inspiration</h3></center>
+        </div>
+        <a href="side2.html"><img class="w3-image" src="/res/tulip1.jpg" alt="Architecture" width="100%"></a>
+        <center><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p></center>
+    </div>
+    <div class="column">
+        <div>
+            <center><h3>Erfaren med diabetes</h3></center>
+        </div>
+        <a href="side3.html"><img class="w3-image" src="/res/tulip1.jpg" alt="Architecture" width="100%"></a>
+        <center><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p></center>
+    </div>
+</div>
+
 <!-- Page content -->
-<div id="testContent" class="w3-content" style="max-width:2000px;min-height:700px;margin-top:46px">
+<div class="w3-content w3-padding" style="max-width:1564px">
 
-    <!-- The Band Section -->
-    <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
-        <h2 class="w3-wide">Delay Discounting</h2>
-        <p class="w3-opacity"><i>Take a delay discounting test now!</i></p>
-        <p class="w3-justify">In the following questions, you will be asked to access whether you would prefer an amount of money now or a different relative amount after a time period. Please take time to consider each choice and answer truthfully.</br>After each click of a button the values change, and after 5 clicks the time period updates.</p>
-        <div class="w3-row w3-padding-32">
-                <p class="w3-opacity"><i>Would you rather want:</i></p>
+    <!-- Project Section -->
+    <div class="w3-container w3-padding-32" id="projects">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Nyheder</h3>
+    </div>
 
-                <div class="w3-half">
-                <p>Now:</p>
-                <button id="nowbutton" class="w3-button w3-black w3-section w3-center" type="button" onclick="nowButton()">1000$</button>
+    <div class="w3-row-padding">
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">Summer House</div>
+                <img src="/w3images/house5.jpg" alt="House" style="width:100%">
             </div>
-            <div class="w3-half">
-                <p id="timePeriodText">Or 3 months:</p>
-                <button id="laterbutton" class="w3-button w3-black w3-section w3-center" type="button" onclick="laterButton()">1000$</button>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">Brick House</div>
+                <img src="/w3images/house2.jpg" alt="House" style="width:100%">
+            </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">Renovated</div>
+                <img src="/w3images/house3.jpg" alt="House" style="width:100%">
+            </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">Barn House</div>
+                <img src="/w3images/house4.jpg" alt="House" style="width:100%">
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-row-padding">
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">Summer House</div>
+                <img src="/w3images/house2.jpg" alt="House" style="width:99%">
+            </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">Brick House</div>
+                <img src="/w3images/house5.jpg" alt="House" style="width:99%">
+            </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">Renovated</div>
+                <img src="/w3images/house4.jpg" alt="House" style="width:99%">
+            </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">Barn House</div>
+                <img src="/w3images/house3.jpg" alt="House" style="width:99%">
             </div>
         </div>
     </div>
 
 
-    <!-- End Page Content -->
+    <div class="w3-row-padding w3-grayscale">
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <img src="/w3images/team2.jpg" alt="John" style="width:100%">
+            <h3>John Doe</h3>
+            <p class="w3-opacity">CEO & Founder</p>
+            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+            <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <img src="/w3images/team1.jpg" alt="Jane" style="width:100%">
+            <h3>Jane Doe</h3>
+            <p class="w3-opacity">Architect</p>
+            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+            <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <img src="/w3images/team3.jpg" alt="Mike" style="width:100%">
+            <h3>Mike Ross</h3>
+            <p class="w3-opacity">Architect</p>
+            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+            <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <img src="/w3images/team4.jpg" alt="Dan" style="width:100%">
+            <h3>Dan Star</h3>
+            <p class="w3-opacity">Architect</p>
+            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+            <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
+        </div>
+    </div>
+
+   <!-- End page content -->
 </div>
 
+
 <!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
-    <p class="w3-medium">Made by Dan Roland Persson</p>
-    <p class="w3-medium">Layout template by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+<footer class="w3-center w3-black w3-padding-16">
+    <p>Alternativ introforløb diabetes koncept.</p>
 </footer>
-
-<script>
-    // Used to toggle the menu on small screens when clicking on the menu button
-
-
-    var index = -1;
-    var idx = [0,1,2,3,4,5,6];
-
-    var time = ["1 Day","1 Week","1 Month","3 Months","1 Year", "5 Years", "25 Years"];
-    var timeInDays = [1,7,30,90,365,1825,9125];
-    var discounts = [];
-
-    //get current dd index:
-    //index = Math.floor(Math.random() * indexes.length);
-    //indexes = indexes.splice(index,1);
-
-    function nowButton() {
-        //console.log("in now");
-        myFunction(true);
-    }
-    function laterButton() {
-        //console.log("in later");
-        myFunction(false);
-
-    }
-
-    var taskCount = 0;
-    var adjustingAmount = 500;
-    var currentValue = 500;
-
-    myFunction(false);
-
-    function myFunction(nowClicked) {
-        //console.log("in update");
-        console.log("Index: " + index);
-        //If first round:
-        if (index === -1) {
-            var temp = Math.floor(Math.random() * idx.length);
-            index = idx[temp];
-            idx.splice(temp, 1);
-        } else {
-            //if now clicked:
-            if (nowClicked) {
-                adjustingAmount = adjustingAmount / 2;
-                currentValue = currentValue - adjustingAmount;
-                taskCount++;
-            } else if (!nowClicked) {//if later clicked:
-                adjustingAmount = adjustingAmount / 2;
-                currentValue = currentValue + adjustingAmount;
-                taskCount++;
-            }
-            //If all rounds are completed save result and move on
-            if (taskCount === 5) {
-                discounts[index] = currentValue;
-                taskCount = 0;
-                //select new random index and remove previous from stack
-                if (idx.length === 0) { // if no more test exist complete the test
-                    finishTest();
-                    return;
-                } else {
-                    console.log("Selecing new index");
-                    var temp = Math.floor(Math.random() * idx.length);
-                    console.log("Temp: " + temp);
-                    console.log("idxlength: " +idx.length);
-                    index = idx[temp];
-                    console.log("Index:" + index);
-                    idx.splice(temp, 1);
-
-                    idx.forEach(function(entry) {
-                        console.log(entry);
-                    });
-
-                    console.log(idx.toString());
-                    adjustingAmount = 500;
-                    currentValue = 500;
-                }
-            }
-        }
-        updateText();
-    }
-    function updateText() {
-        document.getElementById("timePeriodText").innerHTML = time[index];
-        //document.getElementById("nowbutton").innerText = "100$";
-        document.getElementById("nowbutton").innerHTML = currentValue.toString()+"$";
-
-    }
-    function finishTest() {
-        //calculate k
-        var kvals = [];
-
-        var averageK = 0;
-        for (i = 0; i < discounts.length; i++) {
-            var k = calculateK(1000,timeInDays[i],discounts[i]);
-            kvals[i] = k;
-            averageK = averageK + k;
-        }
-        averageK = averageK / discounts.length;
-        console.log(averageK);
-
-        //discounts.forEach(element => kvals[i] = calculateK(100,element,);i++;)
-        var result = "";
-        /*if(averageK > 0.1){
-            result = "You have a very high tendency to discount future rewards, indicating very high impulsiveness.";
-        }else*/ if(averageK >= 0.016){
-            result = "Your answers tell us that you give a lot more value to short term rewards, rather than rewards than are in the longer term future. <br><br>This makes it a lot harder for you to keep motivated for long term goals, such as losing weight, saving money.<br><br>This app will make it easier for you to keep you motivated, for these long term goals.";
-
-        }else if(averageK >= 0.0060){
-            result = "Your answers tell us that you give more value to short term rewards, rather than rewards than are in the longer term future.<br><br>This makes it harder for you to keep motivated for long term goals, such as losing weight, saving money.<br><brThis app will make it easier for you to keep you motivated, for these long term goals.";
-
-        }else if(averageK >= 0.0010){
-            result = "Your answers tell us that you give a bit more value to short term rewards, rather than rewards than are in the longer term future.<br><br>This makes it a bit hard for you to keep motivated for long term goals, such as losing weight, saving money.<br><br>This app will make it easier for you to keep you motivated, for these long term goals.";
-
-        }/*else if(averageK >= 0.0001){ //pretty much unobtainable
-            result = "You have a very low tendency to discount future rewards, indicating low impulsiveness.";
-
-        }*/
-
-
-        var htmlstring = "<center><div style=\"max-width:400px\"><h2 class=\"w3-wide\">Delay Discounting results</h2>\n" +
-            "<p class=\"w3-opacity\"><i>" + result + "</i></p>";
-        htmlstring = htmlstring + "<hr class=\"solid\">\n<p>Your average k = " + averageK +"</p><table><tr><th>Day</th><th>V</th></tr>";
-        for(i = 0; i<discounts.length;i++){
-            htmlstring = htmlstring + "<tr><th>"+timeInDays[i]+"</th><th>"+discounts[i]+"</th></tr>"
-        }
-        htmlstring = htmlstring + "</table></div><button class=\"w3-button w3-black w3-section w3-center\" onclick='refreshPage()'>Restart</button></center>";
-        document.getElementById("testContent").innerHTML = htmlstring;
-    }
-
-    function calculateK(A, D, V){
-        var  k = (A-V) / (D*V);
-        console.log(k);
-        return k;
-    }
-    function refreshPage() {
-        location.reload();
-    }
-
-
-</script>
 
 </body>
 </html>
