@@ -15,6 +15,54 @@
         padding: 10px;
         height: 300px; /* Should be removed. Only for demonstration */
     }
+
+    #parent{position: relative}
+    .imgA1 {
+        z-index: 1;
+    }
+    .imgB1 {
+        position: absolute;
+        z-index: 3;
+        right: 6%;
+        top: 25%;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        width: 100%;
+        grid-gap: 10px;
+
+
+    }
+
+    .item {
+        padding: 40px;
+        font-size: 1.5em;
+        border: 1px solid black;
+    }
+
+    .c {
+        background: lightgreen;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+
+    .e {
+        background: lightgreen;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+
+    .b, .j {
+        background: orange;
+        order: 2;
+    }
+
+    .a, .i {
+        background: violet;
+        order: 3;
+    }
 </style>
 <body>
 
@@ -32,127 +80,176 @@
 </div>
 
 <!-- Header -->
-<div class="w3-content w3-padding" style="max-width:1200px;height:900px" id="home">
+<div class="w3-content w3-padding" style="max-width:901px;height: 850px" id="home">
     <div style="height: 40px;">&nbsp;</div>
     <center><h1 class="w3-border-bottom w3-border-light-grey w3-padding-16">Hvordan oplever du din situation?</h1></center>
     <div>
-        <p> Type 2 diabetes har manage variationer, situationer og personlige problem stillinger, vi har derfor valgt at opdele siden for at sørge for indholdet er mest relevant for dig med diabetes. Opdelingen er basert på medlemmernes erfarringer og opdateres løbende med ny viden. Nedenunder kan du læse om opdelingen og hvad hver kategori indeholder.</p>
+        <p> Type 2 diabetes har manage variationer, situationer og personlige problem stillinger, vi har derfor valgt at opdele siden for at sørge for indholdet er mest relevant for dig med diabetes. Opdelingen er basert på medlemmernes erfarringer og opdateres løbende med ny viden. Nedenunder kan du læse om opdelingen og hvad hver kategori indeholder. <a href="opdeling.html">Læs mere om opdelingen.</a></p>
     </div>
 
-    <div class="column">
-        <div w3-col l3 m6 w3-margin-bottom>
+    <div class="column" style="width: 33%;" id="parent">
+        <div>
             <center><h3>Ny med diabetes</h3></center>
         </div>
-        <a href="side1.html"><img class="w3-image" src="/res/tulip1.jpg" alt="Architecture" width="100%"></a>
+        <a href="side1.html">
+            <img class="imgB1" src="/res/red.png" alt="John" style="width:20%">
+            <img class= "imgA1" style="width: 100%" src="/res/tulip1.jpg" alt="Architecture" style="width:300px;height:300px;">
+        </a>
         <center><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p></center>
     </div>
-    <div class="column">
+    <div class="column" style="width: 33%;" id="parent">
         <div>
             <center><h3> Brug for inspiration</h3></center>
         </div>
-        <a href="side2.html"><img class="w3-image" src="/res/tulip1.jpg" alt="Architecture" width="100%"></a>
+        <a href="side2.html">
+            <img class="w3-image" src="/res/tulip2.jpg" alt="Architecture" style="width:300px;height:300px;">
+            <img class="imgB1" src="/res/yellow.png" alt="John" style="width:20%">
+        </a>
         <center><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p></center>
     </div>
-    <div class="column">
+    <div class="column" style="width: 33%;" id="parent">
         <div>
             <center><h3>Erfaren med diabetes</h3></center>
         </div>
-        <a href="side3.html"><img class="w3-image" src="/res/tulip1.jpg" alt="Architecture" width="100%"></a>
+        <a href="side3.html">
+            <img class="w3-image" src="/res/greentulip.jpg" alt="Architecture" style="width:300px;height:300px;">
+            <img class="imgB1" src="/res/green.png" alt="John" style="width:20%">
+        </a>
         <center><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p></center>
     </div>
 </div>
-
-<!-- Page content -->
 <div class="w3-content w3-padding" style="max-width:1564px">
-
     <!-- Project Section -->
     <div class="w3-container w3-padding-32" id="projects">
         <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Nyheder</h3>
     </div>
 
+
+<div class="container">
+    <div class="w3-col l3 m6 w3-margin-bottom" id="parent" style="width: 100%">
+        <img class="imgB1" src="/res/red.png" alt="John" style="width:20%">
+        <img class="imgA1" src="/res/blod.png" alt="John" style="width:100%">
+        <h3>Intro forløb med blodsukker måling</h3>
+        <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+        <p><button class="w3-button w3-block" style="background-color: #DD020E;color: #FFFFFF;">Contact</button></p>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom" id="parent" style="width: 100%">
+        <img class="imgB1" src="/res/yellow.png" alt="John" style="width:20%">
+        <img src="/res/diafocus.png" alt="Jane" style="width:100%">
+        <h3>Anbefalede apps</h3>
+        <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+        <p><button class="w3-button w3-block" style="background-color: #F8B700;color: #FFFFFF;">Contact</button></p>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom" id="parent" style="width: 100%">
+        <img class="imgB1" src="/res/green.png" alt="John" style="width:20%">
+        <img src="/res/webinar.jpg" alt="Mike" style="width:100%">
+        <h3>Webinar</h3>
+        <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+        <p><button class="w3-button w3-block" style="background-color: #009A17;color: #FFFFFF;">Contact</button></p>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom" id="parent" style="width: 100%">
+        <img class="imgB1" src="/res/red.png" alt="John" style="width:20%">
+        <img src="/res/kort.jpg" alt="Dan" style="width:100%">
+        <h3>Oversigt over lokale tilbud</h3>
+        <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+        <p><button class="w3-button w3-block" style="background-color: #DD020E;color: #FFFFFF;">Contact</button></p>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom" id="parent" style="width: 100%">
+        <img class="imgB1" src="/res/red.png" alt="John" style="width:20%">
+        <img src="/res/mentor.jpg" alt="Dan" style="width:100%">
+        <h3>Mentor ordningen</h3>
+        <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+        <p><button class="w3-button w3-block" style="background-color: #DD020E;color: #FFFFFF;">Contact</button></p>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom" id="parent" style="width: 100%">
+        <img class="imgB1" src="/res/green.png" alt="John" style="width:20%">
+        <img src="/res/Untitled2.png" alt="Dan" style="width:100%">
+        <h3>Rådvigningen</h3>
+        <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+        <p><button class="w3-button w3-block" style="background-color: #009A17;color: #FFFFFF;">Contact</button></p>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom" id="parent" style="width: 100%">
+        <img src="/res/green.png" alt="Dan" style="width:100%">
+        <h3>Andre resourcer</h3>
+        <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+        <p><button class="w3-button w3-block" style="background-color: #009A17;color: #FFFFFF;">Contact</button></p>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom" id="parent" style="width: 100%">
+        <img class="imgB1" src="/res/red.png" alt="John" style="width:20%">
+        <img class="imgA1" src="/res/blod.png" alt="John" style="width:100%">
+        <h3>Intro forløb med blodsukker måling</h3>
+        <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+        <p><button class="w3-button w3-block" style="background-color: #DD020E;color: #FFFFFF;">Contact</button></p>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom" id="parent" style="width: 100%">
+        <img class="imgB1" src="/res/red.png" alt="John" style="width:20%">
+        <img src="/res/diafocus.png" alt="Jane" style="width:100%">
+        <h3>Anbefalede apps</h3>
+        <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+        <p><button class="w3-button w3-block" style="background-color: #DD020E;color: #FFFFFF;">Contact</button></p>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom" id="parent" style="width: 100%">
+        <img class="imgB1" src="/res/red.png" alt="John" style="width:20%">
+        <img src="/res/webinar.jpg" alt="Mike" style="width:100%">
+        <h3>Webinar</h3>
+        <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+        <p><button class="w3-button w3-block" style="background-color: #DD020E;color: #FFFFFF;">Contact</button></p>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom" id="parent" style="width: 100%">
+        <img class="imgB1" src="/res/red.png" alt="John" style="width:20%">
+        <img src="/res/kort.jpg" alt="Dan" style="width:100%">
+        <h3>Oversigt over lokale tilbud</h3>
+        <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+        <p><button class="w3-button w3-block" style="background-color: #DD020E;color: #FFFFFF;">Contact</button></p>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom" id="parent" style="width: 100%">
+        <img class="imgB1" src="/res/red.png" alt="John" style="width:20%">
+        <img src="/res/mentor.jpg" alt="Dan" style="width:100%">
+        <h3>Mentor ordningen</h3>
+        <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+        <p><button class="w3-button w3-block" style="background-color: #DD020E;color: #FFFFFF;">Contact</button></p>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom" id="parent" style="width: 100%">
+        <img class="imgB1" src="/res/red.png" alt="John" style="width:20%">
+        <img src="/res/Untitled2.png" alt="Dan" style="width:100%">
+        <h3>Rådvigningen</h3>
+        <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+        <p><button class="w3-button w3-block" style="background-color: #DD020E;color: #FFFFFF;">Contact</button></p>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom" id="parent" style="width: 100%">
+        <img class="imgB1" src="/res/red.png" alt="John" style="width:20%">
+        <img src="/res/red.png" alt="Dan" style="width:100%">
+        <h3>Andre resourcer</h3>
+        <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+        <p><button class="w3-button w3-block" style="background-color: #DD020E;color: #FFFFFF;">Contact</button></p>
+    </div>
+</div>
+
+
     <div class="w3-row-padding">
         <div class="w3-col l3 m6 w3-margin-bottom">
             <div class="w3-display-container">
-                <div class="w3-display-topleft w3-black w3-padding">Summer House</div>
-                <img src="/w3images/house5.jpg" alt="House" style="width:100%">
+                <div class="w3-display-topleft w3-padding" style="background-color: #F8B700;color: #FFFFFF;">10 år med diabetes</div>
+                <img src="/res/inspiration/i1.jpg" alt="House" style="width:80%">
             </div>
         </div>
         <div class="w3-col l3 m6 w3-margin-bottom">
             <div class="w3-display-container">
-                <div class="w3-display-topleft w3-black w3-padding">Brick House</div>
-                <img src="/w3images/house2.jpg" alt="House" style="width:100%">
+                <div class="w3-display-topleft w3-padding" style="background-color: #F8B700;color: #FFFFFF;">Diabetes i fællesskab</div>
+                <img src="/res/inspiration/i2.jpg" alt="House" style="width:99%">
             </div>
         </div>
         <div class="w3-col l3 m6 w3-margin-bottom">
             <div class="w3-display-container">
-                <div class="w3-display-topleft w3-black w3-padding">Renovated</div>
-                <img src="/w3images/house3.jpg" alt="House" style="width:100%">
+                <div class="w3-display-topleft w3-padding" style="background-color: #F8B700;color: #FFFFFF;">Du er ikke alene</div>
+                <img src="/res/inspiration/i3.jpg" alt="House" style="width:99%">
             </div>
         </div>
         <div class="w3-col l3 m6 w3-margin-bottom">
             <div class="w3-display-container">
-                <div class="w3-display-topleft w3-black w3-padding">Barn House</div>
-                <img src="/w3images/house4.jpg" alt="House" style="width:100%">
+                <div class="w3-display-topleft w3-padding" style="background-color: #F8B700;color: #FFFFFF;">Min rejse gennem diabetes</div>
+                <img src="/res/inspiration/i4.jpg" alt="House" style="width:99%">
             </div>
-        </div>
-    </div>
-
-    <div class="w3-row-padding">
-        <div class="w3-col l3 m6 w3-margin-bottom">
-            <div class="w3-display-container">
-                <div class="w3-display-topleft w3-black w3-padding">Summer House</div>
-                <img src="/w3images/house2.jpg" alt="House" style="width:99%">
-            </div>
-        </div>
-        <div class="w3-col l3 m6 w3-margin-bottom">
-            <div class="w3-display-container">
-                <div class="w3-display-topleft w3-black w3-padding">Brick House</div>
-                <img src="/w3images/house5.jpg" alt="House" style="width:99%">
-            </div>
-        </div>
-        <div class="w3-col l3 m6 w3-margin-bottom">
-            <div class="w3-display-container">
-                <div class="w3-display-topleft w3-black w3-padding">Renovated</div>
-                <img src="/w3images/house4.jpg" alt="House" style="width:99%">
-            </div>
-        </div>
-        <div class="w3-col l3 m6 w3-margin-bottom">
-            <div class="w3-display-container">
-                <div class="w3-display-topleft w3-black w3-padding">Barn House</div>
-                <img src="/w3images/house3.jpg" alt="House" style="width:99%">
-            </div>
-        </div>
-    </div>
-
-
-    <div class="w3-row-padding w3-grayscale">
-        <div class="w3-col l3 m6 w3-margin-bottom">
-            <img src="/w3images/team2.jpg" alt="John" style="width:100%">
-            <h3>John Doe</h3>
-            <p class="w3-opacity">CEO & Founder</p>
-            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-            <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
-        </div>
-        <div class="w3-col l3 m6 w3-margin-bottom">
-            <img src="/w3images/team1.jpg" alt="Jane" style="width:100%">
-            <h3>Jane Doe</h3>
-            <p class="w3-opacity">Architect</p>
-            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-            <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
-        </div>
-        <div class="w3-col l3 m6 w3-margin-bottom">
-            <img src="/w3images/team3.jpg" alt="Mike" style="width:100%">
-            <h3>Mike Ross</h3>
-            <p class="w3-opacity">Architect</p>
-            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-            <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
-        </div>
-        <div class="w3-col l3 m6 w3-margin-bottom">
-            <img src="/w3images/team4.jpg" alt="Dan" style="width:100%">
-            <h3>Dan Star</h3>
-            <p class="w3-opacity">Architect</p>
-            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-            <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
         </div>
     </div>
 
@@ -161,7 +258,7 @@
 
 
 <!-- Footer -->
-<footer class="w3-center w3-black w3-padding-16">
+<footer class="w3-center w3-padding-16" style="background-color: #FFFFFF; opacity: 0.9;">
     <p>Alternativ introforløb diabetes koncept.</p>
 </footer>
 
